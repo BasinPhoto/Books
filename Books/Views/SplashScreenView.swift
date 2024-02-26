@@ -10,7 +10,7 @@ import SwiftUI
 struct SplashScreenView: View {
     @Binding var isLoaded: Bool
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {

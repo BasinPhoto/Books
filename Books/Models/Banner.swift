@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Banner: Codable, Identifiable {
+struct Banner: Codable, Identifiable, Hashable {
     var id: Int
     var bookId: Int
     var cover: String

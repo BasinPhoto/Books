@@ -21,10 +21,10 @@ struct GenreSectionView: View {
                 }
             }
             .safeAreaPadding(.horizontal)
+            .padding(.bottom)
         } header: {
             Text(category)
                 .bold()
-                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
         }

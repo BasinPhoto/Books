@@ -40,7 +40,6 @@ struct BookCardView: View {
                 Text(book.name)
                     .font(.caption2)
             }
-            .foregroundStyle(.white)
             .lineLimit(1)
         }
     }

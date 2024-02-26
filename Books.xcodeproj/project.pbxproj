@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C20415A02B8D03AB0094C10C /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204159F2B8D03AB0094C10C /* BookCardView.swift */; };
+		C20415A22B8D07A20094C10C /* BannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20415A12B8D07A20094C10C /* BannersView.swift */; };
 		C2F1E4002B8CCBE10026ADEF /* BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1E3FF2B8CCBE10026ADEF /* BooksApp.swift */; };
 		C2F1E4022B8CCBE10026ADEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1E4012B8CCBE10026ADEF /* ContentView.swift */; };
 		C2F1E4042B8CCBE20026ADEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F1E4032B8CCBE20026ADEF /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		C204159F2B8D03AB0094C10C /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
+		C20415A12B8D07A20094C10C /* BannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersView.swift; sourceTree = "<group>"; };
 		C2F1E3FC2B8CCBE10026ADEF /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F1E3FF2B8CCBE10026ADEF /* BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksApp.swift; sourceTree = "<group>"; };
 		C2F1E4012B8CCBE10026ADEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				C2F1E4012B8CCBE10026ADEF /* ContentView.swift */,
 				C2F1E40E2B8CCC2A0026ADEF /* SplashScreenView.swift */,
 				C2F1E4112B8CD06B0026ADEF /* LibraryView.swift */,
+				C20415A12B8D07A20094C10C /* BannersView.swift */,
 				C2F1E43D2B8CFFF30026ADEF /* GenreSectionView.swift */,
 				C204159F2B8D03AB0094C10C /* BookCardView.swift */,
 			);
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20415A22B8D07A20094C10C /* BannersView.swift in Sources */,
 				C2F1E4122B8CD06B0026ADEF /* LibraryView.swift in Sources */,
 				C2F1E4282B8CD3080026ADEF /* BooksResponse.swift in Sources */,
 				C2F1E43E2B8CFFF30026ADEF /* GenreSectionView.swift in Sources */,

@@ -10,14 +10,11 @@ import SwiftUI
 
 struct LibraryView: View {
     @State var viewModel = LibraryViewModel()
-    @State private var tabPageSelection = 0
     @State private var sortedByCategoryBooks = [String: [Book]]()
-    
-    private let bannerHeight: CGFloat = 160
     
     var body: some View {
         ScrollView {
-            bannerSection
+            BannersView(banners: viewModel.banners)
             
             ForEach(sortedByCategoryBooks.keys.sorted(), id: \.self) { category in
                 if let books = sortedByCategoryBooks[category] {
@@ -26,35 +23,10 @@ struct LibraryView: View {
             }
         }
         .scrollContentBackground(.visible)
-        .background(.black)
         .task {
             await viewModel.getData()
             sortedByCategoryBooks = viewModel.getSortedByCategory()
         }
-    }
-    
-    private var bannerSection: some View {
-        Section {
-            TabView(selection: $tabPageSelection) {
-                ForEach(viewModel.banners) { banner in
-                    AsyncImage(url: URL(string: banner.cover)) { image in
-                        image
-                            .resizable()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                }
-            }
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .clipShape(.rect(cornerRadius: 16))
-            .frame(height: bannerHeight)
-        } header: {
-            Text("Library")
-                .foregroundStyle(.accent)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .padding()
     }
 }
 
