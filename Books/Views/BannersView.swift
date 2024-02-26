@@ -11,8 +11,8 @@ struct BannersView: View {
     let banners: [Banner]
     
     @State private var selectedBannerIndex = 0
+    @State private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
-    private let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     private let bannerHeight: CGFloat = 160
     
     var body: some View {
