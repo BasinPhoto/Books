@@ -23,7 +23,7 @@ struct SplashScreenView: View {
                     .font(.custom("Georgia", size: 52, relativeTo: .largeTitle))
                     .italic()
                     .bold()
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(.splash)
                 
                 Text("Welcome to Book App")
                     .font(.title2)

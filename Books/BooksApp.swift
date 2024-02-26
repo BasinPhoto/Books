@@ -12,11 +12,17 @@ import SwiftUI
 struct BooksApp: App {
     init() {
         FirebaseApp.configure()
+        setupAppearance()
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    private func setupAppearance() {
+      UIPageControl.appearance().currentPageIndicatorTintColor = .accent
+      UIPageControl.appearance().pageIndicatorTintColor = UIColor.accent.withAlphaComponent(0.3)
     }
 }
