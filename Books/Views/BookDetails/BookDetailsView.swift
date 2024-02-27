@@ -17,6 +17,8 @@ struct BookDetailsView: View {
     var body: some View {
         ScrollView {
             BookDetailsHeader(books: books, scrollPositionBook: $scrollPositionBook)
+                .frame(maxHeight: 700)
+                .clipped()
             
             if let scrollPositionBook {
                 BookDetailsMainSectionView(book: scrollPositionBook)

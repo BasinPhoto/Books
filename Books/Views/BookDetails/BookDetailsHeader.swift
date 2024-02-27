@@ -16,7 +16,6 @@ struct BookDetailsHeader: View {
     
     private let coversSpacing: CGFloat = 20
     private let coverCornerRadius: CGFloat = 16
-    private let coverSectionHeight: CGFloat = 400
     private let contentMargin: CGFloat = 100
     
     var body: some View {
@@ -41,7 +40,6 @@ struct BookDetailsHeader: View {
                         VStack {
                             BookCoverView(book: book)
                                 .containerRelativeFrame(.horizontal)
-                                .clipShape(.rect(cornerRadius: coverCornerRadius))
                             Group {
                                 Text(book.author)
                                     .font(.headline)
@@ -66,9 +64,8 @@ struct BookDetailsHeader: View {
             .scrollPosition(id: $scrollPositionBook)
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.viewAligned)
-            .contentMargins(.horizontal, contentMargin, for: .scrollContent)
+            .contentMargins(.horizontal, 100, for: .scrollContent)
         }
-        .frame(height: coverSectionHeight)
         .padding(.vertical)
         .background {
             Image(.carouselBackground)

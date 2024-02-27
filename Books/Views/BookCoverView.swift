@@ -12,16 +12,23 @@ struct BookCoverView: View {
     
     var body: some View {
         AsyncImage(url: URL(string: book.coverUrl)) { image in
-            image
-                .resizable()
+            Rectangle()
+                .aspectRatio(0.7, contentMode: .fit)
+                .overlay {
+                    image
+                        .resizable()
+                        .scaledToFill()
+                }
+            
         } placeholder: {
             Rectangle()
+                .aspectRatio(0.7, contentMode: .fit)
                 .tint(.gray)
                 .overlay {
                     ProgressView()
                 }
         }
-        .scaledToFill()
+        .clipShape(.rect(cornerRadius: 16))
     }
 }
 

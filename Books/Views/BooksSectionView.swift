@@ -24,7 +24,7 @@ struct BooksSectionView: View {
                         NavigationLink(value: book) {
                             VStack(alignment: .leading) {
                                 BookCoverView(book: book)
-                                    .frame(width: 120, height: 150)
+                                    .frame(height: 150)
                                     .clipped()
                                     .cornerRadius(16)
                                 Group {
@@ -36,7 +36,9 @@ struct BooksSectionView: View {
                                         .font(.caption2)
                                 }
                                 .lineLimit(1)
+                                .padding(.horizontal)
                             }
+                            .frame(width: 120)
                         }
                         .buttonStyle(.plain)
                     }

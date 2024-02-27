@@ -13,10 +13,13 @@ struct BannersView: View {
     @State private var selectedBannerIndex = 0
     @State private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
-    private let bannerHeight: CGFloat = 160
-    
     var body: some View {
-        Section {
+        VStack(alignment: .leading) {
+            Text("Library")
+                .foregroundStyle(.accent)
+                .bold()
+                .padding(.bottom)
+            
             TabView(selection: $selectedBannerIndex) {
                 ForEach(banners.indices, id:\.self) { bannerIndex in
                     let banner = banners[bannerIndex]
@@ -30,13 +33,11 @@ struct BannersView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
+            .aspectRatio(21/9, contentMode: .fill)
             .clipShape(.rect(cornerRadius: 16))
-            .frame(height: bannerHeight)
-        } header: {
-            Text("Library")
-                .foregroundStyle(.accent)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
+            .onTapGesture(perform: {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+            })
         }
         .padding()
         .onReceive(timer) { _ in
