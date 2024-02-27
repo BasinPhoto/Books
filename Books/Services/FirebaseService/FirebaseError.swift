@@ -9,6 +9,5 @@ import Foundation
 
 enum FirebaseError: Error {
     case remoteConfigStatusError
-    case errorLoadingData
     case invalidData
 }

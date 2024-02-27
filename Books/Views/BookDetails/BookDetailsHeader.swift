@@ -29,6 +29,7 @@ struct BookDetailsHeader: View {
                         .bold()
                         .foregroundStyle(.white)
                 }
+                .padding(.top)
                 
                 Spacer()
             }

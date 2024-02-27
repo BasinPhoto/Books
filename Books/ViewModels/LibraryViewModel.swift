@@ -28,7 +28,7 @@ final class LibraryViewModel {
     @ObservationIgnored
     let dataService: FirebaseServiceable
 
-    init(dataService: FirebaseServiceable = MockFirebaseService()) {
+    init(dataService: FirebaseServiceable = FirebaseService()) {
         self.dataService = dataService
     }
     

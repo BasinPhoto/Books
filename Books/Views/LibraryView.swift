@@ -22,11 +22,6 @@ struct LibraryView: View {
                     }
                 }
             }
-            .scrollContentBackground(.visible)
-            .task {
-                await viewModel.getData()
-                sortedByCategoryBooks = viewModel.getSortedByCategory()
-            }
             .navigationDestination(for: Book.self) { book in
                 let selectedBookGenre = book.genre
                 if let allGenreBooks = sortedByCategoryBooks[selectedBookGenre] {
@@ -36,6 +31,10 @@ struct LibraryView: View {
                         likeBooks: viewModel.likeBooks
                     )
                 }
+            }
+            .task {
+                await viewModel.getData()
+                sortedByCategoryBooks = viewModel.getSortedByCategory()
             }
         }
     }
