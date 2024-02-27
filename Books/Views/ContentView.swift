@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var viewModel = LibraryViewModel()
+    
     @State private var isLoaded = false
     
     var body: some View {
         Group {
             if isLoaded {
-                LibraryView()
+                LibraryView(viewModel: viewModel)
             } else {
                 SplashScreenView(isLoaded: $isLoaded)
             }

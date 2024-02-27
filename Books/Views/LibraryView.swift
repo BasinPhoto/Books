@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @State var viewModel = LibraryViewModel()
+    @Bindable var viewModel: LibraryViewModel
     @State private var sortedByCategoryBooks = [String: [Book]]()
     
     var body: some View {
@@ -42,5 +42,5 @@ struct LibraryView: View {
 }
 
 #Preview {
-    LibraryView()
+    LibraryView(viewModel: LibraryViewModel())
 }
