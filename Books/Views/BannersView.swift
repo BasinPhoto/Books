@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BannersView: View {
     let banners: [Banner]
+    let books: [Book]
     
     @State private var selectedBannerIndex = 0
     @State private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
@@ -22,12 +23,14 @@ struct BannersView: View {
             
             TabView(selection: $selectedBannerIndex) {
                 ForEach(banners.indices, id:\.self) { bannerIndex in
-                    let banner = banners[bannerIndex]
-                    AsyncImage(url: URL(string: banner.cover)) { image in
-                        image
-                            .resizable()
-                    } placeholder: {
-                        ProgressView()
+                    NavigationLink(value: books.first(where: { $0.id == banners[bannerIndex].bookId })) {
+                        let banner = banners[bannerIndex]
+                        AsyncImage(url: URL(string: banner.cover)) { image in
+                            image
+                                .resizable()
+                        } placeholder: {
+                            ProgressView()
+                        }
                     }
                     .tag(bannerIndex)
                 }
@@ -35,9 +38,6 @@ struct BannersView: View {
             .tabViewStyle(.page(indexDisplayMode: .always))
             .aspectRatio(21/9, contentMode: .fill)
             .clipShape(.rect(cornerRadius: 16))
-            .onTapGesture(perform: {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-            })
         }
         .padding()
         .onReceive(timer) { _ in
@@ -66,5 +66,42 @@ struct BannersView: View {
         Banner(id: 2, bookId: 2, cover: "https://unsplash.it/600/300"),
         Banner(id: 3, bookId: 3, cover: "https://unsplash.it/600/300")
     ]
-    return BannersView(banners: banners)
+    
+    let books = [
+        Book(
+            id: 1,
+            name: "Run Forest",
+            author: "Tom Hanks",
+            summary: "My best book",
+            genre: "Romance",
+            coverUrl: "https://unsplash.it/600/300",
+            views: "5",
+            likes: "3",
+            quotes: "23"
+        ),
+        Book(
+            id: 2,
+            name: "Wind",
+            author: "John Snow",
+            summary: "Winter is coming",
+            genre: "Romance",
+            coverUrl: "https://unsplash.it/600/300",
+            views: "5",
+            likes: "3",
+            quotes: "34"
+        ),
+        Book(
+            id: 3,
+            name: "Wind",
+            author: "John Snow",
+            summary: "Winter is coming",
+            genre: "Romance",
+            coverUrl: "https://unsplash.it/600/300",
+            views: "5",
+            likes: "3",
+            quotes: "54"
+        )
+    ]
+    
+    return BannersView(banners: banners, books: books)
 }

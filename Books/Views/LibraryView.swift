@@ -14,7 +14,7 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                BannersView(banners: viewModel.banners)
+                BannersView(banners: viewModel.banners, books: viewModel.books)
                 
                 ForEach(sortedByCategoryBooks.keys.sorted(), id: \.self) { category in
                     if let books = sortedByCategoryBooks[category] {
