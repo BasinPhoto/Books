@@ -40,13 +40,12 @@ struct BookDetailsView: View {
                     .clipShape(Capsule())
                     .padding(.horizontal)
             })
-            .padding(.bottom)
         }
         .task {
             scrollPositionBook = selectedBook
         }
         .toolbar(.hidden, for: .navigationBar)
-        .ignoresSafeArea()
+        .ignoresSafeArea(.container, edges: .top)
     }
 }
 

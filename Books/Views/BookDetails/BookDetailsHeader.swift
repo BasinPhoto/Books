@@ -16,7 +16,7 @@ struct BookDetailsHeader: View {
     
     private let coversSpacing: CGFloat = 20
     private let coverCornerRadius: CGFloat = 16
-    private let coverSectionHeight: CGFloat = 350
+    private let coverSectionHeight: CGFloat = 400
     private let contentMargin: CGFloat = 100
     
     var body: some View {
@@ -49,6 +49,7 @@ struct BookDetailsHeader: View {
                                 
                                 Text(book.name)
                                     .font(.subheadline)
+                                    .padding(.bottom, 32)
                             }
                             .lineLimit(1)
                             .foregroundStyle(.white)
